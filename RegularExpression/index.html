@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+   <input type="text"  placeholder="DD-MM-YYYY" onkeyup="myFunction(this)">
+   <label id="asd"></label>
+    <script>
+        const label=document.getElementById("asd");
+        function myFunction(arg){
+            
+         console.log(arg.value);
+            const error=validate(arg.value);
+            if(error){
+                label.innerHTML=error;
+            }
+            else{
+                label.innerHTML="";
+            }
+        }
+        function validate(value){
+            // let regx=/^[a-z][a-z0-9_]*$/i;
+            let regx=/(^[012]?\d|3[01])-([0]?\d|1[012])-(\d{4})$/i;
+            let result=regx.test(value);
+            console.log(result);
+            if(result){
+                return "";
+            }
+            else{
+                return "invalid string";
+            }
+        }  
+    </script>
+</body>
+</html>

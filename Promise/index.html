@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- <button id="btn">Click Me</button>
+    <script src="Promise.js"></script>
+    <script src="./myFetch.js"></script>
+    <script src="code.jquery.com_jquery-3.7.1.min.js"></script> -->
+<button id="btn">ssass</button>
+
+<table>
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>TITLE</th>
+            <th>STATUS</th>
+        </tr>
+    </thead>
+   <tbody id="body">
+   </tbody>
+</table>
+    <script>
+
+
+       let x= document.getElementById("btn")
+            x.onclick=()=>{
+                fetch("https://jsonplaceholder.typicode.com/todos").then((resdata)=>resdata.json()).then((datas)=>{
+    //  document.getElementById("d").innerHTML=data.id+" "+data.title
+    s=""
+    datas.map((data)=>{
+        console.log(data);
+        s=s+`<tr> <td>${data.id}</td>
+        <td>${data.title}</td>
+        <td>${data.completed?"Completed":"Not Completed"}</td></tr>`;
+
+    })
+   document.getElementById("body").innerHTML=s;
+      }).catch((error)=>{
+        console.log(error);
+      })
+            }
+     
+    </script>
+   
+</body>
+</html>

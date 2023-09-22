@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+ 
+</body>
+
+<input type="text" id="calc" placeholder="Enter your age">
+<button id="btn">click</button>
+<div id="lbl"></div>
+
+<script>
+  let x=document.getElementById("calc");
+  let y=document.getElementById("btn");
+  y.addEventListener("click", function(){
+    let s=parseInt(x.value);
+
+    let v=""
+    for(i=1;i<=s;i++)
+    {
+            v=v+`<div>${i}</div>`;
+    }
+    document.getElementById("lbl").innerHTML=v;
+   
+  })
+
+ 
+
+   
+</script>
+</html>
